@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Basic Demo</title>
+        <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .sky {
+            font-size: 20px;
+            color: lightskyblue;
+            text-align: center;
+            background: #EAEAE9;
+            padding: 10px;
+        }
+        .readable {
+            font-size: 14px;
+            color: #333;
+            background: #FAFAF9;
+            padding: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Basic DOM Demo</h1>
+            <p class="desc">desc...</p>
+        </div>
+        <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-4-2/esl.js"></script>
+        <script>
+        require.config({
+            packages: [
+                {
+                    name: 'saber-dom',
+                    location: '../src'
+                }
+            ]
+        });
+
+        require( [ 'saber-dom' ], function( dom ) {
+            var title = dom.query( '.title' );
+            var desc = dom.queryAll( 'p' );
+
+            dom.addClass( title, 'sky' );
+            dom.addClass( desc[0], 'readable' );
+
+            dom.setStyle( title, 'float', 'right' );
+            console.log( dom.getStyle( title, 'width' ) );
+        });
+        </script>
+    </body>
+</html>
