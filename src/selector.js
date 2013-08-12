@@ -57,30 +57,8 @@ define(function() {
 
         var nodeList = context.querySelectorAll( selector );
 
-        return toArray( nodeList );
+        return Array.prototype.slice.call( nodeList );
     };
-
-    /**
-     * 转化为数组
-     *
-     * @inner
-     * @param {*} source 目标
-     * @return {Array}
-     */
-    function toArray( source ) {
-        var length = source.length;
-
-        if ( typeof length === 'number' ) {
-            var result = [];
-            for ( var i = 0; i < length; i++ ) {
-                result[ i ] = source[ i ];
-            }
-            return result;
-        }
-        else {
-            return [ source ];
-        }
-    }
 
     return exports;
 
