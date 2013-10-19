@@ -1,6 +1,6 @@
 {
     "name": "saber-dom",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "DOM utils for mobile browser.",
     "main": "main",
     "maintainers": [

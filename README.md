@@ -6,8 +6,6 @@ saber-dom
 Usage
 ---
 
-**现在 `saber-dom` 模块还在开发中，无法通过 `edp` 安装。**
-
 通过`edp`引入模块：
 
     edp import saber-dom
