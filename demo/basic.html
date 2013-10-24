@@ -21,12 +21,20 @@
             background: #FAFAF9;
             padding: 10px;
         }
+        .list span {
+            background: #FFA;
+        }
         </style>
     </head>
     <body>
         <div class="container">
             <h1 class="title">Basic DOM Demo</h1>
             <p class="desc">desc...</p>
+            <ul class="list">
+                <li>please <span>click</span> me !</li>
+                <li><span>here</span> is a matches demo.</li>
+                <li>when you using <span>delegate</span>, it's very useful.</li>
+            </ul>
         </div>
         <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-6/esl.js"></script>
         <script>
@@ -48,6 +56,15 @@
 
             dom.setStyle( title, 'float', 'right' );
             console.log( dom.getStyle( title, 'width' ) );
+
+            // matches demo
+            var list = dom.query( '.list' );
+            list.addEventListener( 'click', function( ev ) {
+                var el = ev.target;
+                if ( dom.matches( el, '.list span' ) ) {
+                    title.innerHTML = 'you clicked: ' + el.innerHTML;
+                }
+            });
         });
         </script>
     </body>
