@@ -11,13 +11,13 @@ define(function () {
      * 获取元素的子节点
      *
      * @public
-     * @param {HTMLElement} ele DOM元素
+     * @param {HTMLElement} element DOM元素
      * @return {Array.<HTMLElement>} 子节点
      */
-    exports.children = function (ele) {
+    exports.children = function (element) {
         var res = []; 
 
-        var items = ele.children;
+        var items = element.children;
         for (var i = 0, item; item = items[i]; i++) {
             if (item.nodeType == 1) {
                 res.push(item);
