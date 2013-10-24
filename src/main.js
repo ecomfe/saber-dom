@@ -18,7 +18,7 @@ define(function( require ) {
 
     extend( exports, require( './selector' ) );
     extend( exports, require( './css' ) );
-    // extend( exports, require( './manipulation' ) );
+    extend( exports, require( './manipulation' ) );
 
     return exports;
 });
