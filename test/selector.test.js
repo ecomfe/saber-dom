@@ -9,7 +9,7 @@ define(function() {
 
     describe( 'Selector', function() {
         describe( '.g( id )', function() {
-            it( 'shoud work', function() {
+            it( 'should work', function() {
                 var el = dom.g( 'li-item' );
                 expect( el ).toBe( document.getElementById( 'li-item' ) );
             });
@@ -96,7 +96,7 @@ define(function() {
         });
 
         describe( '.matches( element, selector )', function() {
-            it( 'shoud work', function() {
+            it( 'should work', function() {
                 var el = dom.g( 'li-item' );
                 var res = dom.matches( el, '.list li' );
 
