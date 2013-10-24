@@ -35,7 +35,8 @@ define(function() {
 
             it( 'class selector', function() {
                 var el = dom.query( '.list' );
-                expect( el ).toBe( document.getElementsByClassName( 'list' )[0] );
+                expect( el )
+                    .toBe( document.getElementsByClassName( 'list' )[0] );
             });
 
             it( 'complex selector', function() {
