@@ -68,7 +68,7 @@ define(function() {
      * 为目标元素添加className
      *
      * @public
-     * @param {HTMLElement} element 目标元素或目标元素的id
+     * @param {HTMLElement} element 目标元素
      * @param {string} className 要添加的className
      *
      * @return {HTMLElement} 目标元素
@@ -99,7 +99,7 @@ define(function() {
      * 移除目标元素的className
      *
      * @public
-     * @param {HTMLElement} element 目标元素或目标元素的id
+     * @param {HTMLElement} element 目标元素
      * @param {string} className 要移除的className
      *
      * @return {HTMLElement} 目标元素
@@ -128,7 +128,7 @@ define(function() {
      * 判断元素是否拥有指定的className
      *
      * @public
-     * @param {HTMLElement} element 目标元素或目标元素的id
+     * @param {HTMLElement} element 目标元素
      * @param {string} className 要判断的className
      *
      * @return {boolean} 是否拥有指定的className
