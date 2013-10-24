@@ -94,6 +94,15 @@ define(function() {
                 expect( el ).toEqual( [] );
             });
         });
+
+        describe( '.matches( element, selector )', function() {
+            it( 'shoud work', function() {
+                var el = dom.g( 'li-item' );
+                var res = dom.matches( el, '.list li' );
+
+                expect( res ).toBe( true );
+            });
+        });
     });
 
 });
