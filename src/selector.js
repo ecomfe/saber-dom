@@ -60,6 +60,33 @@ define(function() {
         return Array.prototype.slice.call( nodeList );
     };
 
+    /**
+     * 判断DOM元素与选择器是否匹配
+     * 
+     * @param {HTMLElement} element 目标DOM元素
+     * @param {string} selector 待判断的selector
+     * @return {boolean} 是否匹配
+     */
+    exports.matches = function( element, selector ) {
+        var proto = Element.prototype;
+        var matches = proto.matches
+            || proto.webkitMatchesSelector
+            || proto.mozMatchesSelector
+            || proto.msMatchesSelector;
+
+        if ( matches ) {
+            return matches.call( element, selector );
+        }
+
+        var elements = exports.queryAll( selector, element.parentNode );
+        for ( var i = 0; i < elements.length; i++ ) {
+            if ( elements[ i ] == element ) {
+                return true;
+            }
+        }
+        return false;
+    };
+
     return exports;
 
 });
