@@ -39,6 +39,10 @@ API
 
 根据选择器选择DOM元素列表。
 
+#### .matches( element, selector )
+
+判断DOM元素与选择器是否匹配。
+
 ### 样式
 
 #### .getStyle( element, property )
