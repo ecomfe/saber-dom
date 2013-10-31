@@ -72,3 +72,9 @@ API
 #### .hasClass( element, className )
 
 判断元素是否拥有指定的className。
+
+### 遍历
+
+#### .children( element )
+
+获取元素的子节点。
