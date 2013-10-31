@@ -1,5 +1,5 @@
 /**
- * @file DOM节点操作
+ * @file 遍历
  * @author treelite(c.xinle@gmail.com)
  */
 

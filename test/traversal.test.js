@@ -1,5 +1,5 @@
 /**
- * manipulation test case
+ * traversal test case
  * 
  * @author firede[firede@firede.us]
  */
