@@ -78,3 +78,7 @@ API
 #### .children( element )
 
 获取元素的子节点。
+
+#### .closest( element, selector, context )
+
+查找第一个匹配条件的祖先元素。
