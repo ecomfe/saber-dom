@@ -1,6 +1,7 @@
 /**
  * @file 遍历
- * @author treelite(c.xinle@gmail.com)
+ * @author  treelite[c.xinle@gmail.com],
+ *          firede[firede@firede.us]
  */
 
 define(function ( require ) {

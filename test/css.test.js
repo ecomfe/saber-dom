@@ -1,7 +1,8 @@
 /**
  * css test case
  * 
- * @author firede[firede@firede.us]
+ * @author  firede[firede@firede.us],
+ *          treelite[c.xinle@gmail.com]
  */
 
 define(function() {
