@@ -38,6 +38,16 @@ define(function() {
 
                 expect( el.style.color ).toBe( 'green' );
                 expect( el.style.fontSize ).toBe( '18px' );
+
+                dom.setStyle( el, 'transition', 'none 0s' );
+                var prefixes = ['t', 'webkitT', 'msT', 'oT'];
+                var pass = 0;
+                prefixes.forEach( function ( prefix ) {
+                    if ( el.style[prefix + 'ransition'] == 'none 0s' ) {
+                        pass++;
+                    }
+                });
+                expect( pass >= 1 ).toBeTruthy();
             });
 
             it( '.getStyle( element, property )', function() {
@@ -46,6 +56,9 @@ define(function() {
                 expect( dom.getStyle( el, 'font-size' ) ).toBe( '11px' );
                 expect( dom.getStyle( el, 'color' ) )
                     .toBe( 'rgb(255, 255, 170)' );
+
+                dom.setStyle( el, 'transition', 'none 0s' );
+                expect( dom.getStyle( el, 'transition' ) ).toBe( 'none 0s' );
             });
         });
 

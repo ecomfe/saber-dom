@@ -21,6 +21,35 @@ define(function() {
         });
     }
 
+    var detectEle = document.createElement('div');
+    var prefixes = ['webkit', 'ms', 'o'];
+    /**
+     * 检测支持的CSS属性名称
+     * 如果没有找到支持的属性名称返回原有值
+     *
+     * @inner
+     * @param {string} property CSS属性名
+     * @return {string}
+     */
+    function detectProperty( property ) {
+        if ( property.charAt(0) !== '-' ) {
+            var style = detectEle.style;
+            var name = camelize( property );
+
+            if ( !( name in style ) ) {
+                name = property.charAt( 0 ).toUpperCase()
+                            + property.substring( 1 );
+                for ( var i = 0, prefix; prefix = prefixes[i]; i++ ) {
+                    if ( prefix + name in style ) {
+                        property = '-' + prefix + '-' + property;
+                        break;
+                    }
+                }
+            }
+        }
+        return property;
+    }
+
     /**
      * 获取样式
      * 
@@ -29,6 +58,7 @@ define(function() {
      * @return {string|null}
      */
     exports.getStyle = function( element, property ) {
+        property = detectProperty(property);
         return element.style[ camelize( property ) ]
             || getComputedStyle( element ).getPropertyValue( property );
     };
@@ -41,6 +71,7 @@ define(function() {
      * @param {string} value 值
      */
     exports.setStyle = function( element, property, value ) {
+        property = detectProperty(property);
         element.style[ camelize( property ) ] = value;
     };
 
