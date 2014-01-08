@@ -1,6 +1,7 @@
 /**
  * @file  样式
- * @author  Firede[firede@firede.us]
+ * @author  Firede[firede@firede.us],
+ *          treelite[c.xinle@gmail.com]
  */
 
 define(function() {
@@ -178,6 +179,37 @@ define(function() {
             }
             return false;
         }
+    };
+
+    /**
+     * 获取元素的相对位置
+     *
+     * @public
+     * @param {HTMLELement} element 目标元素
+     * @param {HTMLELement=} offsetEle 相对元素
+     * @return {Object}
+     */
+    exports.position = function (element, offsetEle) {
+        var res = {};
+        var pos = element.getBoundingClientRect();
+
+        if (offsetEle) {
+            var fixPos = offsetEle.getBoundingClientRect();
+            res.left = pos.left - fixPos.left;
+            res.top = pos.top - fixPos.top;
+        }
+        else {
+            res.left = pos.left + Math.max(
+                document.documentElement.scrollLeft,
+                document.body.scrollLeft
+            );
+            res.top = pos.top + Math.max(
+                document.documentElement.scrollTop,
+                document.body.scrollTop
+            );
+        }
+
+        return res;
     };
 
 
