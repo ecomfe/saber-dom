@@ -1,4 +1,4 @@
-saber-dom
+saber-dom [![Build Status](https://travis-ci.org/ecomfe/saber-dom.png)](https://travis-ci.org/ecomfe/saber-dom)
 ===
 
 一个适用于移动端，静态函数风格的DOM工具库。
