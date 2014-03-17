@@ -1,6 +1,6 @@
 {
     "name": "saber-dom",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "DOM utils for mobile browser.",
     "main": "main",
     "maintainers": [
@@ -9,7 +9,13 @@
     "contributors": [
         { "name": "treelite", "email": "c.xinle@gmail.com" }
     ],
-    "license": "BSD",
+    "scripts": {
+        "test": "./node_modules/.bin/phantomjs test/run-jasmine.js test/runner.html"
+    },
+    "devDependencies": {
+        "phantomjs": "~1.9"
+    },
+    "license": "MIT",
     "repository": "git://github.com/ecomfe/saber-dom.git",
     "bugs": "https://github.com/ecomfe/saber-dom/issues"
 }
