@@ -75,7 +75,7 @@ API
 
 #### .position( element, offsetEle )
 
-获取元素的相对位置，如果省略`offsetEle`参数，则是相对于`body`的相对位置。
+获取元素的相对位置，如果省略`offsetEle`参数，则是相对于页面（[Initial Containing Block](http://www.w3.org/TR/CSS2/visudet.html)）的位置。
 
 ### 遍历
 
