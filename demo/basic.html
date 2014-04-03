@@ -38,8 +38,9 @@
                 <li>please <span>click</span> me !</li>
                 <li><span>here</span> is a matches demo.</li>
                 <li>when you using <span>delegate</span>, it's very useful.</li>
-                <li><span>closest demo <span id="closest">here</span> !</span></li>
+                <li><span>closest demo <span id="closest" data-ui="saber">here</span> !</span></li>
             </ul>
+            <p id="dataset-result"></p>
         </div>
         <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-6/esl.js"></script>
         <script>
@@ -78,6 +79,18 @@
             var ret3 = dom.closest( cEl, 'li > span' , list);
 
             console.log( ret1, ret2, ret3 );
+
+            // dataset demo
+            var datasetResult = dom.g('dataset-result');
+            var result = [];
+            result.push( 'null: ' + dom.getData( datasetResult, 'ui' ) );
+            result.push( 'saber: ' + dom.getData( cEl, 'ui' ) );
+            dom.setData( cEl, 'ui', 'rider' );
+            result.push( 'rider: ' + dom.getData( cEl, 'ui' ) );
+            dom.removeData( cEl, 'ui' );
+            result.push( 'null: ' + dom.getData( cEl, 'ui' ) );
+
+            datasetResult.innerHTML = result.join('<br/>');
         });
         </script>
     </body>

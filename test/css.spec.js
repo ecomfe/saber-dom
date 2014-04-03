@@ -76,6 +76,43 @@ define(function() {
                 expect( el.style.display ).toBe( '' );
             });
         });
+
+        describe( '.position( element, offsetEle )', function () {
+            it( 'absolute element widthout offset element', function () {
+                var el = dom.g( 'test-container' );
+                var pos = dom.position( el );
+
+                expect( Object.keys( pos ).length ).toBe( 2 );
+                expect( pos.left ).toBe( -9999 );
+                expect( pos.top ).toBe( -9999 );
+            });
+
+            it( 'absolute element width offset element', function () {
+                var el = dom.g( 'fly' );
+                var outer = dom.g( 'test-container' );
+                var pos = dom.position( el, outer );
+
+                expect( pos.left ).toBe( 150 );
+                expect( pos.top ).toBe( 100 );
+            });
+
+            it( 'static element widthout offset element', function () {
+                var el = dom.g( 'title' );
+                var pos = dom.position( el );
+
+                expect( pos.left ).toBe( -9994 );
+                expect( pos.top ).toBe( -9989 );
+            });
+
+            it( 'static element width offset element', function () {
+                var el = dom.g( 'title' );
+                var outer = dom.g( 'test-container' );
+                var pos = dom.position( el, outer );
+
+                expect( pos.left ).toBe( 5 );
+                expect( pos.top ).toBe( 10 );
+            });
+        });
     });
 
 });

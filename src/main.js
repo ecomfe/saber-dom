@@ -19,6 +19,7 @@ define(function( require ) {
     extend( exports, require( './selector' ) );
     extend( exports, require( './css' ) );
     extend( exports, require( './traversal' ) );
+    extend( exports, require( './data') );
 
     return exports;
 });

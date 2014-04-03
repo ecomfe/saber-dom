@@ -87,6 +87,20 @@ API
 
 查找第一个匹配条件的祖先元素。
 
+### 数据
+
+#### .getData( element, key )
+
+获取目标元素 `data-[key]` 的值，返回值的类型为 `string|null`。
+
+#### .setData( element, key, value )
+
+设置目标元素 `data-[key]` 属性的值。
+
+#### .removeData( element, key )
+
+删除目标元素的 `data-[key]` 属性。
+
 ===
 
 [![Saber](https://f.cloud.github.com/assets/157338/1485433/aeb5c72a-4714-11e3-87ae-7ef8ae66e605.png)](http://ecomfe.github.io/saber/)
