@@ -17,12 +17,7 @@ define(function() {
      * @param {string} value data值
      */
     exports.setData = function ( element, key, value ) {
-        if ( element.dataset ) {
-            element.dataset[ key ] = value;
-        }
-        else {
-            element.setAttribute( attrPrefix + key, value );
-        }
+        element.setAttribute( attrPrefix + key, value );
     };
 
 
@@ -34,18 +29,7 @@ define(function() {
      * @return {string|null} data值
      */
     exports.getData = function ( element, key ) {
-        if ( element.dataset ) {
-            var val = element.dataset[ key ];
-
-            if ( typeof( val ) === 'undefined' ) {
-                val = null;
-            }
-
-            return val;
-        }
-        else {
-            return element.getAttribute( attrPrefix + key );
-        }
+        return element.getAttribute( attrPrefix + key );
     };
 
     /**
@@ -55,12 +39,7 @@ define(function() {
      * @param {string} key data名
      */
     exports.removeData = function ( element, key ) {
-        if ( element.dataset ) {
-            delete element.dataset[ key ];
-        }
-        else {
-            element.removeAttribute( attrPrefix + key );
-        }
+        element.removeAttribute( attrPrefix + key );
     };
 
     return exports;
