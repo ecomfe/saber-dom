@@ -31,11 +31,17 @@ define(function() {
      * 
      * @param {HTMLElement} element 目标元素
      * @param {string} key data名
-     * @return {string} data值
+     * @return {string|null} data值
      */
     exports.getData = function ( element, key ) {
         if ( element.dataset ) {
-            return element.dataset[ key ];
+            var val = element.dataset[ key ];
+
+            if ( typeof( val ) === 'undefined' ) {
+                val = null;
+            }
+
+            return val;
         }
         else {
             return element.getAttribute( attrPrefix + key );
