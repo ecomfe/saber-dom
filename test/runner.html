@@ -24,12 +24,26 @@
         color: red;
         font-size: 15px;
     }
+
+    #title {
+        margin: 10px 5px;
+        padding: 10px;
+    }
+
+    #fly {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #CCC;
+        top: 100px;
+        left: 150px;
+    }
     </style>
 </head>
 <body>
 
     <div id="test-container">
-        <h1 class="title">test case.</h1>
+        <h1 id="title">test case.</h1>
         <ul class="list">
             <li class="active">1</li>
             <li style="color:#ffa;font-size:11px;">2</li>
@@ -50,6 +64,7 @@
                 </span>
             </p>
         </div>
+        <div id="fly"></div>
     </div>
 
     <script>
