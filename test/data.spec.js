@@ -58,6 +58,13 @@ define(function() {
                 expect( dom.getData( el, 'ui' ) ).toEqual( 'large' );
             });
 
+            it( 'should get string when set a number', function () {
+                var el = dom.query( '.data-three' );
+                dom.setData( el, 'num', 99 );
+
+                expect( dom.getData( el, 'num' ) ).toEqual( '99' );
+            });
+
         });
 
         describe( '.removeData( element, key )', function () {
