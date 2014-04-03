@@ -93,11 +93,11 @@ API
 
 获取目标元素 `data-[key]` 的值，返回值的类型为 `string|null`。
 
-### .setData( element, key, value )
+#### .setData( element, key, value )
 
 设置目标元素 `data-[key]` 属性的值。
 
-### .removeData( element, key )
+#### .removeData( element, key )
 
 删除目标元素的 `data-[key]` 属性。
 
