@@ -49,6 +49,9 @@ define(function() {
                     }
                 });
                 expect( pass >= 1 ).toBeTruthy();
+
+                dom.setStyle(el, 'margin-top-collapse', 'separate');
+                expect(el.style.webkitMarginTopCollapse).toEqual('separate');
             });
 
             it( '.getStyle( element, property )', function() {

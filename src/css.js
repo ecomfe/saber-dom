@@ -33,13 +33,12 @@ define(function() {
      * @return {string}
      */
     function detectProperty( property ) {
-        if ( property.charAt(0) !== '-' ) {
+        if ( property.charAt( 0 ) !== '-' ) {
             var style = detectEle.style;
             var name = camelize( property );
 
             if ( !( name in style ) ) {
-                name = property.charAt( 0 ).toUpperCase()
-                            + property.substring( 1 );
+                name = name.charAt( 0 ).toUpperCase() + name.substring( 1 );
                 for ( var i = 0, prefix; prefix = prefixes[i]; i++ ) {
                     if ( prefix + name in style ) {
                         property = '-' + prefix + '-' + property;

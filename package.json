@@ -10,7 +10,7 @@
         { "name": "treelite", "email": "c.xinle@gmail.com" }
     ],
     "scripts": {
-        "test": "./node_modules/.bin/phantomjs test/run-jasmine.js test/runner.html"
+        "test": "phantomjs test/run-jasmine.js test/runner.html"
     },
     "devDependencies": {
         "phantomjs": "~1.9"
