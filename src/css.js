@@ -156,6 +156,26 @@ define(function() {
     };
 
     /**
+     * 反转目标元素的className
+     *
+     * @public
+     * @param {HTMLElement} element 目标元素
+     * @param {string} className 要反转的className
+     * @param {boolean=} isForce 强制指定添加或移除, 传入`true`则添加, 反之则移除
+     *
+     * @return {HTMLElement} 目标元素
+     */
+    exports.toggleClass = function( element, className, isForce ) {
+        isForce = 'boolean' === typeof isForce
+            ? isForce
+            : !exports.hasClass( element, className );
+
+        exports[ isForce ? 'addClass' : 'removeClass' ]( element, className );
+
+        return element;
+    };
+
+    /**
      * 判断元素是否拥有指定的className
      *
      * @public

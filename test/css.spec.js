@@ -1,8 +1,9 @@
 /**
  * css test case
- * 
+ *
  * @author  firede[firede@firede.us],
- *          treelite[c.xinle@gmail.com]
+ *          treelite[c.xinle@gmail.com],
+ *          zfkun[zfkun@msn.com]
  */
 
 define(function() {
@@ -28,6 +29,21 @@ define(function() {
             it( '.removeClass( element, className )', function() {
                 dom.removeClass( el, 'container' );
                 expect( el.className ).toBe( '' );
+            });
+
+            it( '.toggleClass( element, className )', function() {
+                dom.toggleClass( el, 'container' );
+                expect( el.className ).toBe( 'container' );
+                dom.toggleClass( el, 'container' );
+                expect( el.className ).toBe( '' );
+            });
+
+            it( '.toggleClass( element, className, isForce )', function() {
+                dom.toggleClass( el, 'container', false );
+                expect( el.className ).toBe( '' );
+                dom.toggleClass( el, 'container', true );
+                dom.toggleClass( el, 'container', true );
+                expect( el.className ).toBe( 'container' );
             });
         });
 
