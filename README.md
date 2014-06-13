@@ -73,6 +73,12 @@ API
 
 判断元素是否拥有指定的className。
 
+#### .toggleClass( element, className [, isForce ] )
+
+反转目标元素的className。
+
+若指定`isForce`参数为`true`时，则添加className，为`false`时，则移除className。
+
 #### .position( element, offsetEle )
 
 获取元素的相对位置，如果省略`offsetEle`参数，则是相对于页面（[Initial Containing Block](http://www.w3.org/TR/CSS2/visudet.html)）的位置。

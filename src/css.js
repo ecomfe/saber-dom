@@ -1,7 +1,8 @@
 /**
  * @file  样式
  * @author  Firede[firede@firede.us],
- *          treelite[c.xinle@gmail.com]
+ *          treelite[c.xinle@gmail.com],
+ *          zfkun[zfkun@msn.com]
  */
 
 define(function() {
@@ -12,7 +13,7 @@ define(function() {
 
     /**
      * 将CSS属性驼峰化
-     * 
+     *
      * @param {string} target 目标字符串
      * @return {string}
      */
@@ -33,13 +34,12 @@ define(function() {
      * @return {string}
      */
     function detectProperty( property ) {
-        if ( property.charAt(0) !== '-' ) {
+        if ( property.charAt( 0 ) !== '-' ) {
             var style = detectEle.style;
             var name = camelize( property );
 
             if ( !( name in style ) ) {
-                name = property.charAt( 0 ).toUpperCase()
-                            + property.substring( 1 );
+                name = name.charAt( 0 ).toUpperCase() + name.substring( 1 );
                 for ( var i = 0, prefix; prefix = prefixes[i]; i++ ) {
                     if ( prefix + name in style ) {
                         property = '-' + prefix + '-' + property;
@@ -53,7 +53,7 @@ define(function() {
 
     /**
      * 获取样式
-     * 
+     *
      * @param {HTMLElement} element 目标元素
      * @param {string} property 属性
      * @return {string|null}
@@ -66,7 +66,7 @@ define(function() {
 
     /**
      * 设置样式
-     * 
+     *
      * @param {HTMLElement} element 目标元素
      * @param {string} property 属性
      * @param {string} value 值
@@ -114,7 +114,7 @@ define(function() {
             var classes = element.className
                 ? element.className.split( /\s+/ ) : [];
 
-            for ( var i = 0; i < classes.length; i++ ) {
+            for ( var i = 0, n = classes.length; i < n; i++ ) {
                 if ( classes[ i ] === className ) {
                     return element;
                 }
@@ -144,7 +144,7 @@ define(function() {
             var classes = element.className
                 ? element.className.split( /\s+/ ) : [];
 
-            for ( var i = 0; i < classes.length; i++ ) {
+            for ( var i = 0, n = classes.length; i < n; i++ ) {
                 if ( classes[ i ] === className ) {
                     classes.splice( i, 1 );
                     i--;
@@ -152,6 +152,26 @@ define(function() {
             }
             element.className = classes.join( ' ' );
         }
+
+        return element;
+    };
+
+    /**
+     * 反转目标元素的className
+     *
+     * @public
+     * @param {HTMLElement} element 目标元素
+     * @param {string} className 要反转的className
+     * @param {boolean=} isForce 强制指定添加或移除, 传入`true`则添加, 反之则移除
+     *
+     * @return {HTMLElement} 目标元素
+     */
+    exports.toggleClass = function( element, className, isForce ) {
+        isForce = 'boolean' === typeof isForce
+            ? isForce
+            : !exports.hasClass( element, className );
+
+        exports[ isForce ? 'addClass' : 'removeClass' ]( element, className );
 
         return element;
     };
@@ -172,7 +192,7 @@ define(function() {
         }
         else {
             var classes = element.className.split( /\s+/ );
-            for ( var i = 0; i < classes.length; i++ ) {
+            for ( var i = 0, n = classes.length; i < n; i++ ) {
                 if ( classes[ i ] === className ) {
                     return true;
                 }
