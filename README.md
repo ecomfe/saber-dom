@@ -73,7 +73,7 @@ API
 
 判断元素是否拥有指定的className。
 
-#### .toggleClass(element, className [, isForce ])
+#### .toggleClass(element, className [, isForce])
 
 反转目标元素的className。
 
