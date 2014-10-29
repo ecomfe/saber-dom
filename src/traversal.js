@@ -14,7 +14,7 @@ define(function (require) {
      * 获取元素的子节点
      *
      * @public
-     * @param {HTMLElement} element DOM元素
+     * @param {HTMLElement} element 目标元素
      * @return {Array.<HTMLElement>} 子节点
      */
     exports.children = function (element) {

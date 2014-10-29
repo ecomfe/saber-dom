@@ -27,7 +27,7 @@ define(function () {
      *
      * @public
      * @param {string} selector 元素的selector
-     * @param {HTMLElement} context 上下文
+     * @param {HTMLElement=} context 上下文
      * @return {HTMLElement|null} 获取的元素，找不到时返回null
      */
     exports.query = function (selector, context) {
@@ -45,7 +45,7 @@ define(function () {
      *
      * @public
      * @param {string} selector 元素的selector
-     * @param {HTMLElement} context 上下文
+     * @param {HTMLElement=} context 上下文
      * @return {Array} 获取的元素列表，找不到时为空数组
      */
     exports.queryAll = function (selector, context) {
