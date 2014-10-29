@@ -9,14 +9,14 @@ var traversal = require('saber-dom/traversal');
 
 ## API
 
-### .children(element)
+### children(element)
 
 获取元素的子节点
 
 * **element** `{HTMLElement}` 目标元素
 * _return_ `{Array.<HTMLElement>}` 子节点
 
-### .closest(element, selector, context)
+### closest(element, selector, context)
 
 查找第一个匹配条件的祖先元素
 
