@@ -3,7 +3,7 @@
  * @author  Firede[firede@firede.us]
  */
 
-define(function(require) {
+define(function (require) {
 
     var exports = {};
 

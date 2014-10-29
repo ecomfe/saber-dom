@@ -22,7 +22,7 @@ define(function (require) {
 
         var items = element.children;
         for (var i = 0, item; item = items[i]; i++) { // jshint ignore:line
-            if (item.nodeType == 1) {
+            if (item.nodeType === 1) {
                 res.push(item);
             }
         }
@@ -38,7 +38,7 @@ define(function (require) {
      * @param {HTMLElement} context 遍历范围
      * @return {HTMLElement|null} 匹配到的节点，找不到时返回null
      */
-    exports.closest = function(element, selector, context) {
+    exports.closest = function (element, selector, context) {
         context = context || document;
 
         do {

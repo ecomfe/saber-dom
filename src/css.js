@@ -5,7 +5,7 @@
  *          zfkun[zfkun@msn.com]
  */
 
-define(function() {
+define(function () {
 
     var exports = {};
 
@@ -18,7 +18,7 @@ define(function() {
      * @return {string}
      */
     function camelize(target) {
-        return target.replace(/-+(.)?/g, function(match, chr) {
+        return target.replace(/-+(.)?/g, function (match, chr) {
             return chr ? chr.toUpperCase() : '';
         });
     }
@@ -59,7 +59,7 @@ define(function() {
      * @param {string} property 属性
      * @return {string|null}
      */
-    exports.getStyle = function(element, property) {
+    exports.getStyle = function (element, property) {
         property = detectProperty(property);
         return element.style[camelize(property)]
             || getComputedStyle(element).getPropertyValue(property);
@@ -72,7 +72,7 @@ define(function() {
      * @param {string} property 属性
      * @param {string} value 值
      */
-    exports.setStyle = function(element, property, value) {
+    exports.setStyle = function (element, property, value) {
         property = detectProperty(property);
         element.style[camelize(property)] = value;
     };
@@ -82,7 +82,7 @@ define(function() {
      *
      * @param {HTMLElement} element 目标元素
      */
-    exports.show = function(element) {
+    exports.show = function (element) {
         if (exports.getStyle(element, 'display') === 'none') {
             element.style.display = null;
         }
@@ -93,7 +93,7 @@ define(function() {
      *
      * @param {HTMLElement} element 目标元素
      */
-    exports.hide = function(element) {
+    exports.hide = function (element) {
         element.style.display = 'none';
     };
 
@@ -106,7 +106,7 @@ define(function() {
      *
      * @return {HTMLElement} 目标元素
      */
-    exports.addClass = function(element, className) {
+    exports.addClass = function (element, className) {
         // 优先使用classList. 在iOS 5, Android 3 之后开始支持
         if (element.classList) {
             element.classList.add(className);
@@ -137,7 +137,7 @@ define(function() {
      *
      * @return {HTMLElement} 目标元素
      */
-    exports.removeClass = function(element, className) {
+    exports.removeClass = function (element, className) {
         if (element.classList) {
             element.classList.remove(className);
         }
@@ -167,7 +167,7 @@ define(function() {
      *
      * @return {HTMLElement} 目标元素
      */
-    exports.toggleClass = function(element, className, isForce) {
+    exports.toggleClass = function (element, className, isForce) {
         isForce = 'boolean' === typeof isForce
             ? isForce
             : !exports.hasClass(element, className);
