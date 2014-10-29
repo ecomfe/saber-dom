@@ -191,15 +191,15 @@ define(function() {
         if (element.classList) {
             return element.classList.contains(className);
         }
-        else {
-            var classes = element.className.split(/\s+/);
-            for (var i = 0, n = classes.length; i < n; i++) {
-                if (classes[i] === className) {
-                    return true;
-                }
+
+        var classes = element.className.split(/\s+/);
+        for (var i = 0, n = classes.length; i < n; i++) {
+            if (classes[i] === className) {
+                return true;
             }
-            return false;
         }
+
+        return false;
     };
 
     /**
