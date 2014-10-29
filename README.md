@@ -26,6 +26,6 @@ dom.addClass(el, 'el-class-name');
 ## API
 
 * [selector](./doc/selector.md)
-* [样式](./doc/css.md)
+* [css](./doc/css.md)
 * [traversal](./doc/traversal.md)
 * [data](./doc/data.md)
