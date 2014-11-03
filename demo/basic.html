@@ -53,42 +53,42 @@
             ]
         });
 
-        require( [ 'saber-dom' ], function( dom ) {
-            var title = dom.query( '.title' );
-            var desc = dom.queryAll( 'p' );
+        require([ 'saber-dom' ], function(dom) {
+            var title = dom.query('.title');
+            var desc = dom.queryAll('p');
 
-            dom.addClass( title, 'sky' );
-            dom.addClass( desc[0], 'readable' );
+            dom.addClass(title, 'sky');
+            dom.addClass(desc[0], 'readable');
 
-            dom.setStyle( title, 'float', 'right' );
-            console.log( dom.getStyle( title, 'width' ) );
+            dom.setStyle(title, 'float', 'right');
+            console.log(dom.getStyle(title, 'width'));
 
             // matches demo
-            var list = dom.query( '.list' );
-            list.addEventListener( 'click', function( ev ) {
+            var list = dom.query('.list');
+            list.addEventListener('click', function(ev) {
                 var el = ev.target;
-                if ( dom.matches( el, '.list span' ) ) {
+                if (dom.matches(el, '.list span')) {
                     title.innerHTML = 'you clicked: ' + el.innerHTML;
                 }
             });
 
             // closest demo
-            var cEl = dom.g( 'closest' );
-            var ret1 = dom.closest( cEl, 'span' );
-            var ret2 = dom.closest( cEl, 'ul' );
-            var ret3 = dom.closest( cEl, 'li > span' , list);
+            var cEl = dom.g('closest');
+            var ret1 = dom.closest(cEl, 'span');
+            var ret2 = dom.closest(cEl, 'ul');
+            var ret3 = dom.closest(cEl, 'li > span' , list);
 
-            console.log( ret1, ret2, ret3 );
+            console.log(ret1, ret2, ret3);
 
             // dataset demo
             var datasetResult = dom.g('dataset-result');
             var result = [];
-            result.push( 'null: ' + dom.getData( datasetResult, 'ui' ) );
-            result.push( 'saber: ' + dom.getData( cEl, 'ui' ) );
-            dom.setData( cEl, 'ui', 'rider' );
-            result.push( 'rider: ' + dom.getData( cEl, 'ui' ) );
-            dom.removeData( cEl, 'ui' );
-            result.push( 'null: ' + dom.getData( cEl, 'ui' ) );
+            result.push('null: ' + dom.getData(datasetResult, 'ui'));
+            result.push('saber: ' + dom.getData(cEl, 'ui'));
+            dom.setData(cEl, 'ui', 'rider');
+            result.push('rider: ' + dom.getData(cEl, 'ui'));
+            dom.removeData(cEl, 'ui');
+            result.push('null: ' + dom.getData(cEl, 'ui'));
 
             datasetResult.innerHTML = result.join('<br/>');
         });
