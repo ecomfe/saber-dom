@@ -20,7 +20,6 @@ define(function () {
         element.setAttribute(attrPrefix + key, value);
     };
 
-
     /**
      * 获取data的值
      *
