@@ -1,9 +1,10 @@
 /**
- * css test case
- *
+ * @file css test case
  * @author  firede[firede@firede.us],
  *          treelite[c.xinle@gmail.com]
  */
+
+/* eslint-disable max-nested-callbacks */
 
 define(function() {
     var dom = require('saber-dom');

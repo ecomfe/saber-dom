@@ -1,3 +1,13 @@
+/**
+ * @file  样式
+ * @author  Firede[firede@firede.us],
+ *          treelite[c.xinle@gmail.com]
+ */
+
+/* eslint-env node */
+/* global phantom */
+
+
 var system = require('system');
 
 if (system.args.length !== 2) {
@@ -36,7 +46,7 @@ page.onConsoleMessage = function (msg) {
 };
 
 system.stdout.writeLine('');
-page.open(system.args[1], function(status){
+page.open(system.args[1], function(status) {
     if (status !== 'success') {
         console.log('Could\'t load the page');
     }

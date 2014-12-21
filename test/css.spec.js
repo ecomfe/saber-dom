@@ -1,24 +1,25 @@
 /**
- * css test case
- *
+ * @file css test case
  * @author  firede[firede@firede.us],
  *          treelite[c.xinle@gmail.com],
  *          zfkun[zfkun@msn.com]
  */
 
-define(function() {
+/* eslint-disable max-nested-callbacks */
+
+define(function () {
     var dom = require('saber-dom');
 
-    describe('CSS', function() {
-        describe('css classes', function() {
+    describe('CSS', function () {
+        describe('css classes', function () {
             var el = dom.g('test-container');
 
-            it('.addClass(element, className)', function() {
+            it('.addClass(element, className)', function () {
                 dom.addClass(el, 'container');
                 expect(el.className).toBe('container');
             });
 
-            it('.hasClass(element, className)', function() {
+            it('.hasClass(element, className)', function () {
                 var res = dom.hasClass(el, 'container');
                 expect(res).toBe(true);
 
@@ -26,19 +27,19 @@ define(function() {
                 expect(res).toBe(false);
             });
 
-            it('.removeClass(element, className)', function() {
+            it('.removeClass(element, className)', function () {
                 dom.removeClass(el, 'container');
                 expect(el.className).toBe('');
             });
 
-            it('.toggleClass(element, className)', function() {
+            it('.toggleClass(element, className)', function () {
                 dom.toggleClass(el, 'container');
                 expect(el.className).toBe('container');
                 dom.toggleClass(el, 'container');
                 expect(el.className).toBe('');
             });
 
-            it('.toggleClass(element, className, isForce)', function() {
+            it('.toggleClass(element, className, isForce)', function () {
                 dom.toggleClass(el, 'container', false);
                 expect(el.className).toBe('');
                 dom.toggleClass(el, 'container', true);
@@ -47,8 +48,8 @@ define(function() {
             });
         });
 
-        describe('css styles', function() {
-            it('.setStyle(element, property, value)', function() {
+        describe('css styles', function () {
+            it('.setStyle(element, property, value)', function () {
                 var el = dom.query('.list .active');
                 dom.setStyle(el, 'color', 'green');
                 dom.setStyle(el, 'font-size', '18px');
@@ -60,7 +61,7 @@ define(function() {
                 var prefixes = ['t', 'webkitT', 'msT', 'oT'];
                 var pass = 0;
                 prefixes.forEach(function (prefix) {
-                    if (el.style[prefix + 'ransition'] == 'none 0s') {
+                    if (el.style[prefix + 'ransition'] === 'none 0s') {
                         pass++;
                     }
                 });
@@ -70,7 +71,7 @@ define(function() {
                 expect(el.style.webkitMarginTopCollapse).toEqual('separate');
             });
 
-            it('.getStyle(element, property)', function() {
+            it('.getStyle(element, property)', function () {
                 var el = dom.query('.list li:nth-child(2)');
 
                 expect(dom.getStyle(el, 'font-size')).toBe('11px');
@@ -82,15 +83,15 @@ define(function() {
             });
         });
 
-        describe('css shortcut', function() {
+        describe('css shortcut', function () {
             var el = dom.g('li-item');
 
-            it('.hide()', function() {
+            it('.hide()', function () {
                 dom.hide(el);
                 expect(el.style.display).toBe('none');
             });
 
-            it('.show()', function() {
+            it('.show()', function () {
                 dom.show(el);
                 expect(el.style.display).toBe('');
             });
