@@ -1,5 +1,5 @@
 /**
- * @file  样式
+ * @file run jasmine
  * @author  Firede[firede@firede.us],
  *          treelite[c.xinle@gmail.com]
  */
@@ -46,7 +46,7 @@ page.onConsoleMessage = function (msg) {
 };
 
 system.stdout.writeLine('');
-page.open(system.args[1], function(status) {
+page.open(system.args[1], function (status) {
     if (status !== 'success') {
         console.log('Could\'t load the page');
     }
