@@ -101,6 +101,13 @@ define(function () {
 
                 expect(res).toBe(true);
             });
+
+            it('element is not match', function () {
+                var el = dom.g('li-item');
+                var res = dom.matches(el, '.list-not-exist');
+
+                expect(res).toBe(false);
+            });
         });
     });
 

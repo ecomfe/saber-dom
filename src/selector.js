@@ -46,7 +46,7 @@ define(function () {
      * @public
      * @param {string} selector 元素的selector
      * @param {HTMLElement=} context 上下文
-     * @return {Array} 获取的元素列表，找不到时为空数组
+     * @return {Array.<HTMLElement>} 获取的元素列表，找不到时为空数组
      */
     exports.queryAll = function (selector, context) {
         if (Array.isArray(selector)) {
@@ -79,12 +79,10 @@ define(function () {
         }
 
         var elements = exports.queryAll(selector, element.parentNode);
-        for (var i = 0; i < elements.length; i++) {
-            if (elements[i] === element) {
-                return true;
-            }
-        }
-        return false;
+
+        return elements.some(function (item) {
+            return item === element;
+        });
     };
 
     return exports;
