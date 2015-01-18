@@ -85,10 +85,11 @@ define(function () {
      * 显示DOM元素
      *
      * @param {HTMLElement} element 目标元素
+     * @param {string=} value display的值，默认为空字符串
      */
-    exports.show = function (element) {
+    exports.show = function (element, value) {
         if (exports.getStyle(element, 'display') === 'none') {
-            element.style.display = null;
+            element.style.display = value || '';
         }
     };
 
