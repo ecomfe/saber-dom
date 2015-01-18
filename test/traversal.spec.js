@@ -22,7 +22,7 @@ define(function () {
         describe('.closest(element, selector, context)', function () {
             var el = dom.g('closest-test');
 
-            it('should work', function() {
+            it('should work', function () {
                 var res = dom.closest(el, 'div');
                 var resOk = dom.query('.c3');
 

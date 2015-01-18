@@ -114,9 +114,9 @@ define(function () {
                 expect(res).toBe(true);
             });
 
-            it('should not match', function () {
+            it('element is not match', function () {
                 var el = dom.g('li-item');
-                var res = dom.matches(el, '.not-exist');
+                var res = dom.matches(el, '.list-not-exist');
 
                 expect(res).toBe(false);
             });

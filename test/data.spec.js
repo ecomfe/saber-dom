@@ -6,7 +6,7 @@
 
 /* eslint-disable max-nested-callbacks */
 
-define(function() {
+define(function () {
     var dom = require('saber-dom');
 
     describe('Data', function () {
