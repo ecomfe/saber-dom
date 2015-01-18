@@ -56,6 +56,12 @@ define(function () {
                 var el = dom.query('.not-exist');
                 expect(el).toBe(null);
             });
+
+            it('selector is a dom element', function () {
+                var item = dom.g('li-item');
+                var el = dom.query(item);
+                expect(el).toBe(item);
+            });
         });
 
         describe('.queryAll(selector, context)', function () {
@@ -92,6 +98,12 @@ define(function () {
                 var el = dom.queryAll('.not-exist');
                 expect(el).toEqual([]);
             });
+
+            it('selector is an element array', function () {
+                var items = dom.queryAll('.active');
+                var el = dom.queryAll(items);
+                expect(el).toBe(items);
+            });
         });
 
         describe('.matches(element, selector)', function () {
@@ -100,6 +112,13 @@ define(function () {
                 var res = dom.matches(el, '.list li');
 
                 expect(res).toBe(true);
+            });
+
+            it('should not match', function () {
+                var el = dom.g('li-item');
+                var res = dom.matches(el, '.not-exist');
+
+                expect(res).toBe(false);
             });
         });
     });

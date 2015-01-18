@@ -18,13 +18,17 @@ define(function () {
      * @return {string}
      */
     function camelize(target) {
-        return target.replace(/-+(.)?/g, function (match, chr) {
-            return chr ? chr.toUpperCase() : '';
-        });
+        return target.replace(
+            /-+(.)?/g,
+            function (match, chr) {
+                return chr ? chr.toUpperCase() : '';
+            }
+        );
     }
 
     var detectEle = document.createElement('div');
     var prefixes = ['webkit', 'ms', 'o'];
+
     /**
      * 检测支持的CSS属性名称
      * 如果没有找到支持的属性名称返回原有值

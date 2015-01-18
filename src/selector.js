@@ -15,6 +15,7 @@ define(function () {
      * @return {HTMLElement|null} 获取的元素，找不到时返回null
      */
     exports.g = function (id) {
+        // 异常情况下，确保返回值为null
         if (!id) {
             return null;
         }
@@ -31,7 +32,8 @@ define(function () {
      * @return {HTMLElement|null} 获取的元素，找不到时返回null
      */
     exports.query = function (selector, context) {
-        if ('string' !== typeof selector) {
+        // 已是DOM元素则直接返回
+        if (selector instanceof HTMLElement) {
             return selector;
         }
 
@@ -46,9 +48,10 @@ define(function () {
      * @public
      * @param {string} selector 元素的selector
      * @param {HTMLElement=} context 上下文
-     * @return {Array} 获取的元素列表，找不到时为空数组
+     * @return {Array.<HTMLElement>} 获取的元素列表，找不到时为空数组
      */
     exports.queryAll = function (selector, context) {
+        // 已是DOM元素列表则直接返回
         if (Array.isArray(selector)) {
             return selector;
         }
@@ -79,12 +82,10 @@ define(function () {
         }
 
         var elements = exports.queryAll(selector, element.parentNode);
-        for (var i = 0; i < elements.length; i++) {
-            if (elements[i] === element) {
-                return true;
-            }
-        }
-        return false;
+
+        return elements.some(function (item) {
+            return item === element;
+        });
     };
 
     return exports;

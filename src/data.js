@@ -7,7 +7,13 @@ define(function () {
 
     var exports = {};
 
-    var attrPrefix = 'data-';
+    /**
+     * data属性前缀
+     *
+     * @const
+     * @type {string}
+     */
+    var ATTR_PREFIX = 'data-';
 
     /**
      * 设置data的值
@@ -17,7 +23,7 @@ define(function () {
      * @param {string} value data值
      */
     exports.setData = function (element, key, value) {
-        element.setAttribute(attrPrefix + key, value);
+        element.setAttribute(ATTR_PREFIX + key, value);
     };
 
     /**
@@ -28,7 +34,7 @@ define(function () {
      * @return {string|null} data值
      */
     exports.getData = function (element, key) {
-        return element.getAttribute(attrPrefix + key);
+        return element.getAttribute(ATTR_PREFIX + key);
     };
 
     /**
@@ -38,7 +44,7 @@ define(function () {
      * @param {string} key data名
      */
     exports.removeData = function (element, key) {
-        element.removeAttribute(attrPrefix + key);
+        element.removeAttribute(ATTR_PREFIX + key);
     };
 
     return exports;
