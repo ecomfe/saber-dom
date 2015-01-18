@@ -18,16 +18,7 @@ define(function (require) {
      * @return {Array.<HTMLElement>} 子节点
      */
     exports.children = function (element) {
-        var res = [];
-
-        var items = element.children;
-        for (var i = 0, item; item = items[i]; i++) { // jshint ignore:line
-            if (item.nodeType === 1) {
-                res.push(item);
-            }
-        }
-
-        return res;
+        return Array.prototype.slice.call(element.children);
     };
 
     /**
